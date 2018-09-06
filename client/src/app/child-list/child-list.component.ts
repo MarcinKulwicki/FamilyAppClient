@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ChildService} from '../shared/child/child.service';
+import {Observable} from "rxjs";
+import {HttpErrorResponse} from "../../../node_modules/@angular/common/http";
 
 @Component({
   selector: 'app-child-list',
@@ -8,9 +10,14 @@ import {ChildService} from '../shared/child/child.service';
 })
 export class ChildListComponent implements OnInit {
 
+  firstName: string;
+  secondName: string;
+  pesel: string;
+  sex: string;
   childs: Array<any>;
 
-  constructor(private childService: ChildService) { }
+  constructor(private childService: ChildService) {
+  }
 
   ngOnInit() {
     this.childService.getAll().subscribe(data => {
@@ -18,6 +25,26 @@ export class ChildListComponent implements OnInit {
     });
   }
 
+  addChild() {
+    const child: Child = ({
+      firstName: this.firstName,
+      secondName: this.secondName,
+      pesel: this.pesel,
+      sex: this.sex
+    });
+    this.childService.addChild(child).retry(2).subscribe(f => {
+      console.log(f);
+    }, (error1: HttpErrorResponse) => {
+      console.log(error1.status);
+      if (error1.status == null) {
+        console.log('no error');
+      }
+    });
+  }
+
+  getChildList() {
+    return this.childService.getChildList();
+  }
 }
 
 export interface Child {

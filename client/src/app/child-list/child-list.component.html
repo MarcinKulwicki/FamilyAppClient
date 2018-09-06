@@ -1,18 +1,34 @@
 <!--<h2>Child List</h2>-->
 
 <!--<div *ngFor="let child of childs">-->
-  <!--{{child.pesel}}-->
-  <!--{{child.sex}}-->
+<!--{{child.pesel}}-->
+<!--{{child.sex}}-->
 <!--</div>-->
 
 
-<mat-card>
-  <mat-card-header>Child List</mat-card-header>
-  <mat-card-content>
-    <mat-list>
-      <mat-list-item *ngFor="let child of childs">
-        <h3 mat-line>{{child.pesel}} - {{child.sex}}</h3>
-      </mat-list-item>
-    </mat-list>
-  </mat-card-content>
-</mat-card>
+<!--<mat-card>-->
+<!--<mat-card-header>Child List</mat-card-header>-->
+<!--<mat-card-content>-->
+<!--<mat-list>-->
+<!--<mat-list-item *ngFor="let child of childs">-->
+<!--<h3 mat-line>{{child.pesel}} - {{child.sex}}</h3>-->
+<!--</mat-list-item>-->
+<!--</mat-list>-->
+<!--</mat-card-content>-->
+<!--</mat-card>-->
+
+
+<div>
+  <input [(ngModel)]="firstName" placeholder="First Name">
+  <input [(ngModel)]="secondName" placeholder="Second Name">
+  <input [(ngModel)]="pesel" placeholder="Pesel">
+  <input [(ngModel)]="sex" placeholder="Sex">
+
+  <button (click)="addChild()">Add Child</button>
+
+  <div>
+    Childs:
+    <div *ngFor="let child of getChildList()">
+      {{child?.firstName}} {{child?.secondName}} {{child?.pesel}} {{child?.sex}}
+    </div>
+  </div>
