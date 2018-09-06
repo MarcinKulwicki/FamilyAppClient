@@ -19,3 +19,10 @@ export class ChildListComponent implements OnInit {
   }
 
 }
+
+export interface Child {
+  firstName?: string;
+  secondName?: string;
+  pesel?: string;
+  sex?: string;
+}

@@ -1,0 +1,13 @@
+<div>
+  <input [(ngModel)]="firstName" placeholder="First Name">
+  <input [(ngModel)]="secondName" placeholder="Second Name">
+  <input [(ngModel)]="pesel" placeholder="Pesel">
+  <input type="date" [(ngModel)]="date" placeholder="Date">
+
+  <button (click)="addFather()">Add Father</button>
+
+
+  <div>
+    Father: {{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}} {{getFather()?.date}}
+  </div>
+</div>

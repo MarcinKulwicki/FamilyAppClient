@@ -1,6 +1,18 @@
-<h2>Child List</h2>
+<!--<h2>Child List</h2>-->
 
-<div *ngFor="let child of childs">
-  {{child.pesel}}
-  {{child.sex}}
-</div>
+<!--<div *ngFor="let child of childs">-->
+  <!--{{child.pesel}}-->
+  <!--{{child.sex}}-->
+<!--</div>-->
+
+
+<mat-card>
+  <mat-card-header>Child List</mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let child of childs">
+        <h3 mat-line>{{child.pesel}} - {{child.sex}}</h3>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
