@@ -34,11 +34,12 @@ export class ChildListComponent implements OnInit {
     });
     this.childService.addChild(child).retry(2).subscribe(f => {
       console.log(f);
-    }, (error1: HttpErrorResponse) => {
-      console.log(error1.status);
-      if (error1.status == null) {
+      if (f == null) {
+        this.childService.addToChildList(child);
         console.log('no error');
       }
+    }, (error1: HttpErrorResponse) => {
+      console.log(error1.status);
     });
   }
 

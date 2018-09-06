@@ -18,11 +18,13 @@ export class ChildService {
   }
 
   addChild(child: Child): Observable<Child>{
-    this.childList.push(child);
     return this.http.post<Child>('http://localhost:8080/rest/child', child);
   }
 
   getChildList(){
     return this.childList;
+  }
+  addToChildList(child: Child){
+    this.childList.push(child);
   }
 }
