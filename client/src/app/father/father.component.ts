@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FatherService} from '../shared/father/father.service';
+import {FatherService} from '../service/father/father.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import 'rxjs/add/operator/retry';
 
@@ -32,7 +32,7 @@ export class FatherComponent implements OnInit {
     this.fatherService.addFather(father).retry(2).subscribe(f => {
         console.log(f);
       }, (error: HttpErrorResponse) => {
-        console.log(error.status);
+        console.log(error.message);
       }
     );
 

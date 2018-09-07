@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ChildService} from '../shared/child/child.service';
-import {Observable} from "rxjs";
-import {HttpErrorResponse} from "../../../node_modules/@angular/common/http";
+import {ChildService} from '../service/child/child.service';
+import {HttpErrorResponse} from '../../../node_modules/@angular/common/http'
 
 @Component({
   selector: 'app-child-list',
@@ -38,8 +37,8 @@ export class ChildListComponent implements OnInit {
         this.childService.addToChildList(child);
         console.log('no error');
       }
-    }, (error1: HttpErrorResponse) => {
-      console.log(error1.status);
+    }, (error: HttpErrorResponse) => {
+      console.log(error.message);
     });
   }
 

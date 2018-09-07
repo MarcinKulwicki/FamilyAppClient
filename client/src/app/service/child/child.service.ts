@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import {Child} from '../../child-list/child-list.component';
-
+import { Child } from '../../child-list/child-list.component';
 
 
 @Injectable()
@@ -17,14 +16,15 @@ export class ChildService {
     return this.http.get('//localhost:8080/rest');
   }
 
-  addChild(child: Child): Observable<Child>{
+  addChild(child: Child): Observable<Child> {
     return this.http.post<Child>('http://localhost:8080/rest/child', child);
   }
 
-  getChildList(){
+  getChildList() {
     return this.childList;
   }
-  addToChildList(child: Child){
+
+  addToChildList(child: Child) {
     this.childList.push(child);
   }
 }
