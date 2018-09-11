@@ -42,6 +42,10 @@ export class ChildListComponent implements OnInit {
     });
   }
 
+  removeChild(child: Child) {
+    this.childService.removeChildFromList(child);
+  }
+
   getChildList() {
     return this.childService.getChildList();
   }

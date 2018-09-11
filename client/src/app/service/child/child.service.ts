@@ -27,4 +27,8 @@ export class ChildService {
   addToChildList(child: Child) {
     this.childList.push(child);
   }
+
+  removeChildFromList(child: Child) {
+    this.childList.splice(this.childList.findIndex(c => c === child), 1);
+  }
 }

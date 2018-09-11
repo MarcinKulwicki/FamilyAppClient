@@ -1,13 +1,26 @@
 <div>
-  <input [(ngModel)]="firstName" placeholder="First Name">
-  <input [(ngModel)]="secondName" placeholder="Second Name">
-  <input [(ngModel)]="pesel" placeholder="Pesel">
-  <input type="date" [(ngModel)]="date" placeholder="Date">
+  <mat-card>
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput [(ngModel)]="firstName" placeholder="First Name">
+      </mat-form-field>
 
-  <button (click)="addFather()">Add Father</button>
+      <mat-form-field>
+        <input matInput [(ngModel)]="secondName" placeholder="Second Name">
+      </mat-form-field>
 
+      <mat-form-field>
+        <input matInput [(ngModel)]="pesel" placeholder="PESEL">
+      </mat-form-field>
 
-  <div>
-    Father: {{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}} {{getFather()?.date}}
-  </div>
+      <mat-form-field>
+        <input matInput type="date" [(ngModel)]="date" placeholder="Date">
+      </mat-form-field>
+
+      <button type="button" class="btn btn-secondary" (click)="addFather()">Add Father</button>
+    </div>
+      <mat-card>
+        <div>Father: {{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}} {{getFather()?.date}}</div>
+      </mat-card>
+  </mat-card>
 </div>

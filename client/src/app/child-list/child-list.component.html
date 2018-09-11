@@ -1,34 +1,64 @@
-<!--<h2>Child List</h2>-->
-
-<!--<div *ngFor="let child of childs">-->
-<!--{{child.pesel}}-->
-<!--{{child.sex}}-->
-<!--</div>-->
-
-
-<!--<mat-card>-->
-<!--<mat-card-header>Child List</mat-card-header>-->
-<!--<mat-card-content>-->
-<!--<mat-list>-->
-<!--<mat-list-item *ngFor="let child of childs">-->
-<!--<h3 mat-line>{{child.pesel}} - {{child.sex}}</h3>-->
-<!--</mat-list-item>-->
-<!--</mat-list>-->
-<!--</mat-card-content>-->
-<!--</mat-card>-->
-
-
 <div>
-  <input [(ngModel)]="firstName" placeholder="First Name">
-  <input [(ngModel)]="secondName" placeholder="Second Name">
-  <input [(ngModel)]="pesel" placeholder="Pesel">
-  <input [(ngModel)]="sex" placeholder="Sex">
+  <mat-card>
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput [(ngModel)]="firstName" placeholder="First Name">
+      </mat-form-field>
 
-  <button (click)="addChild()">Add Child</button>
+      <mat-form-field>
+        <input matInput [(ngModel)]="secondName" placeholder="Second Name">
+      </mat-form-field>
 
-  <div>
-    Childs:
-    <div *ngFor="let child of getChildList()">
-      {{child?.firstName}} {{child?.secondName}} {{child?.pesel}} {{child?.sex}}
+      <mat-form-field>
+        <input matInput [(ngModel)]="pesel" placeholder="PESEL">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select [(ngModel)]="sex" placeholder="Select">
+          <mat-option value="Man">Man</mat-option>
+          <mat-option value="Woman">Woman</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button type="button" class="btn btn-secondary" (click)="addChild()">Add Child</button>
     </div>
-  </div>
+
+
+    <div *ngIf="getChildList().length > 0;then areChilds;else noChild"></div>
+
+    <ng-template #noChild>
+      <mat-card>Child list is empty</mat-card>
+    </ng-template>
+
+    <ng-template #areChilds>
+      <mat-card>
+        <table class="table table-borderless">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="row">First Name</th>
+            <th scope="row">Second Name</th>
+            <th scope="row">Pesel</th>
+            <th scope="row">Sex</th>
+            <th scope="row">Remove</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let child of getChildList(); let i= index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{child?.firstName}}</td>
+            <td>{{child?.secondName}}</td>
+            <td>{{child?.pesel}}</td>
+            <td>{{child?.sex}}</td>
+            <td>
+              <button type="button" class="btn btn-secondary" (click)="removeChild(child)">Remove</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </mat-card>
+    </ng-template>
+
+  </mat-card>
+
+</div>
