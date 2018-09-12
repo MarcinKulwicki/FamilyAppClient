@@ -20,7 +20,7 @@
       <button type="button" class="btn btn-secondary" (click)="addFather()" routerLink="/child">Add Father</button>
     </div>
       <mat-card>
-        <div>Father: {{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}} {{getFather()?.date}}</div>
+        <div>Father: {{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}} {{getFather()?.date | date}}</div>
       </mat-card>
   </mat-card>
 </div>

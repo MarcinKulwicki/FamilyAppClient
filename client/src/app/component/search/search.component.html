@@ -52,8 +52,7 @@
         <td>{{child?.pesel}}</td>
         <td>{{child?.sex}}</td>
         <td>
-          {{child?.familyDTO.id}}
-          <!--<button type="button" class="btn btn-secondary" (click)="removeChild(child)">Remove</button>-->
+          <button routerLink="/family" type="button" class="btn btn-secondary" (click)="findFamily(child?.familyDTO.id)">Take</button>
         </td>
       </tr>
       </tbody>

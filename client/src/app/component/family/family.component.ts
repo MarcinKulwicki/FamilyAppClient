@@ -35,11 +35,20 @@ export class FamilyComponent implements OnInit {
     });
 
   }
-  getFather(){
+
+  getFather() {
     return this.fatherService.getFather();
   }
+
   getChildList() {
     return this.childService.getChildList();
+  }
+
+  getFamilyDTO() {
+    return this.familyService.getFamily();
+  }
+  removeSearch() {
+    this.familyService.removeSearch();
   }
 
 }
@@ -47,4 +56,26 @@ export class FamilyComponent implements OnInit {
 export interface Family {
   fatherDTO?: Father;
   childrenDTO?: Array<Child>;
+}
+
+export interface FamilyDTO {
+  id?: Number;
+  fatherDTO?: FatherDTO;
+  childrenDTO?: Array<ChildDTO>;
+}
+
+export interface ChildDTO {
+  firstName?: string;
+  secondName?: string;
+  pesel?: string;
+  date?: Date;
+  sex?: string;
+  familyDTO?: FamilyDTO;
+}
+
+export interface FatherDTO {
+  firstName?: string;
+  secondName?: string;
+  pesel?: string;
+  date?: Date;
 }

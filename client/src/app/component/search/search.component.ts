@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '../../../../node_modules/@angular/common/http';
 import { SearchService } from '../../service/search/search.service';
+import { FamilyService } from '../../service/family/family.service';
 
 @Component({
   selector: 'app-search',
@@ -14,16 +15,17 @@ export class SearchComponent implements OnInit {
   pesel?: string;
   date?: Date;
   sex?: string;
-  childs: Array<Child> = [];
+  childs: Array<ChildDTO> = [];
+  familyDTO?: FamilyDTO;
 
-  constructor(private searchService: SearchService) {
+  constructor(private searchService: SearchService, private familyService: FamilyService) {
   }
 
   ngOnInit() {
   }
 
   searchChild() {
-    const child: Child = ({
+    const child: ChildDTO = ({
       firstName: this.firstName,
       secondName: this.secondName,
       pesel: this.pesel,
@@ -44,9 +46,17 @@ export class SearchComponent implements OnInit {
     return this.childs;
   }
 
-}
+  findFamily(id: number) {
+    this.familyService.findFamilyById(id);
+  }
 
-export interface Child {
+}
+export interface FamilyDTO {
+  id?: Number;
+  fatherDTO?: FatherDTO;
+  childrenDTO?: Array<ChildDTO>;
+}
+export interface ChildDTO {
   firstName?: string;
   secondName?: string;
   pesel?: string;
@@ -54,6 +64,12 @@ export interface Child {
   sex?: string;
   familyDTO?: FamilyDTO;
 }
-export interface FamilyDTO {
-  id: Number;
+export interface FatherDTO {
+  firstName?: string;
+  secondName?: string;
+  pesel?: string;
+  date?: Date;
 }
+
+
+

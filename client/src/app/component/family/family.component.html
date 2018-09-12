@@ -1,41 +1,92 @@
-<mat-card>
-  <div>
-    <mat-card>Father: {{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}}
-      {{getFather()?.date}}
-    </mat-card>
-  </div>
+<div *ngIf="getFamilyDTO()?.fatherDTO.secondName.length>3; then findFamily; else myFamily"></div>
 
-  <div *ngIf="getChildList().length > 0;then areChilds;else noChild"></div>
+<ng-template #myFamily>
+  <mat-card>
+    <div>
+      Your Family
+      <mat-card>Father: {{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}}
+        {{getFather()?.date | date}}
+      </mat-card>
+    </div>
 
-  <ng-template #noChild>
-    <mat-card>Child list is empty</mat-card>
-  </ng-template>
+    <div *ngIf="getChildList().length > 0;then areChilds;else noChild"></div>
 
-  <ng-template #areChilds>
-    <mat-card>
-      <table class="table table-borderless">
-        <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="row">First Name</th>
-          <th scope="row">Second Name</th>
-          <th scope="row">Pesel</th>
-          <th scope="row">Sex</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let child of getChildList(); let i= index">
-          <th scope="row">{{i+1}}</th>
-          <td>{{child?.firstName}}</td>
-          <td>{{child?.secondName}}</td>
-          <td>{{child?.pesel}}</td>
-          <td>{{child?.sex}}</td>
-        </tr>
-        </tbody>
-      </table>
-    </mat-card>
-  </ng-template>
+    <ng-template #noChild>
+      <mat-card>Child list is empty</mat-card>
+    </ng-template>
 
-  <button type="button" class="btn btn-secondary" (click)="addFamily()">Add Family</button>
+    <ng-template #areChilds>
+      <mat-card>
+        <table class="table table-borderless">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="row">First Name</th>
+            <th scope="row">Second Name</th>
+            <th scope="row">Pesel</th>
+            <th scope="row">Sex</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let child of getChildList(); let i= index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{child?.firstName}}</td>
+            <td>{{child?.secondName}}</td>
+            <td>{{child?.pesel}}</td>
+            <td>{{child?.sex}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </mat-card>
+    </ng-template>
 
-</mat-card>
+    <button type="button" class="btn btn-secondary" (click)="addFamily()">Add Family</button>
+
+  </mat-card>
+</ng-template>
+<ng-template #findFamily>
+  <mat-card>
+    <div>
+      <mat-card>Father: {{getFamilyDTO()?.fatherDTO.firstName}} {{getFamilyDTO()?.fatherDTO.secondName}} {{getFamilyDTO()?.fatherDTO.pesel}}
+        {{getFamilyDTO()?.fatherDTO.date | date}}
+      </mat-card>
+    </div>
+
+    <div *ngIf="getFamilyDTO().childrenDTO.length > 0;then areChilds;else noChild"></div>
+
+    <ng-template #noChild>
+      <mat-card>Child list is empty</mat-card>
+    </ng-template>
+
+    <ng-template #areChilds>
+      <mat-card>
+        <table class="table table-borderless">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="row">First Name</th>
+            <th scope="row">Second Name</th>
+            <th scope="row">Pesel</th>
+            <th scope="row">Sex</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let child of getFamilyDTO().childrenDTO; let i= index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{child?.firstName}}</td>
+            <td>{{child?.secondName}}</td>
+            <td>{{child?.pesel}}</td>
+            <td>{{child?.sex}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </mat-card>
+    </ng-template>
+
+    <button type="button" class="btn btn-secondary" (click)="removeSearch()">Back to my family</button>
+
+  </mat-card>
+</ng-template>
+
+
+
