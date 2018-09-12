@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '../../../../node_modules/@angular/common/http';
-import { Father } from '../../father/father.component';
+import { Father } from '../../component/father/father.component';
 import { Observable } from 'rxjs/Observable';
 
 

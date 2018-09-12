@@ -17,10 +17,12 @@
         <input matInput type="date" [(ngModel)]="date" placeholder="Date">
       </mat-form-field>
 
-      <button type="button" class="btn btn-secondary" (click)="addFather()">Add Father</button>
+      <button type="button" class="btn btn-secondary" (click)="addFather()" routerLink="/child">Add Father</button>
     </div>
       <mat-card>
         <div>Father: {{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}} {{getFather()?.date}}</div>
       </mat-card>
   </mat-card>
 </div>
+
+<router-outlet></router-outlet>

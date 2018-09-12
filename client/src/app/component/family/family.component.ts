@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Child } from '../child-list/child-list.component';
 import { Father } from '../father/father.component';
-import { FamilyService } from '../service/family/family.service';
-import { FatherService } from '../service/father/father.service';
-import { ChildService } from '../service/child/child.service';
-import { HttpErrorResponse } from '../../../node_modules/@angular/common/http';
+import { FamilyService } from '../../service/family/family.service';
+import { FatherService } from '../../service/father/father.service';
+import { ChildService } from '../../service/child/child.service';
+import { HttpErrorResponse } from '../../../../node_modules/@angular/common/http';
 
 @Component({
   selector: 'app-family',

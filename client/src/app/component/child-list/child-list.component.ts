@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChildService } from '../service/child/child.service';
-import { HttpErrorResponse } from '../../../node_modules/@angular/common/http';
+import { ChildService } from '../../service/child/child.service';
+import { HttpErrorResponse } from '../../../../node_modules/@angular/common/http';
 import { MatMenuTrigger } from '@angular/material';
 
 @Component({
@@ -9,8 +9,6 @@ import { MatMenuTrigger } from '@angular/material';
   styleUrls: ['./child-list.component.css']
 })
 export class ChildListComponent implements OnInit {
-
-  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   firstName: string;
   secondName: string;

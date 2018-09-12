@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Child } from '../../child-list/child-list.component';
+import { Child } from '../../component/child-list/child-list.component';
 
 
 @Injectable()

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppRoutingModule } from './app.routing.module'
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -39,15 +41,18 @@ import {
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { ChildListComponent } from './child-list/child-list.component';
-import { FatherComponent } from './father/father.component';
-import { FamilyComponent } from './family/family.component';
+import { ChildListComponent } from './component/child-list/child-list.component';
+import { FatherComponent } from './component/father/father.component';
+import { FamilyComponent } from './component/family/family.component';
+import { SearchComponent } from './component/search/search.component';
 
 import { FatherService } from './service/father/father.service';
 import { FamilyService } from './service/family/family.service';
 import { ChildService } from './service/child/child.service';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppRoutingModule } from './app.routing.module';
+import { SearchService } from './service/search/search.service';
+;
+
+
 
 @NgModule({
   exports: [
@@ -84,6 +89,9 @@ import { AppRoutingModule } from './app.routing.module';
     MatToolbarModule,
     MatTooltipModule
   ]
+  // ,
+  // providers: [SearchService],
+  // declarations: [SearchComponent]
 })
 export class MatModule {}
 
@@ -92,7 +100,8 @@ export class MatModule {}
     AppComponent,
     ChildListComponent,
     FatherComponent,
-    FamilyComponent
+    FamilyComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -103,7 +112,7 @@ export class MatModule {}
     MatModule,
     AppRoutingModule
   ],
-  providers: [ChildService, FatherService, FamilyService],
+  providers: [ChildService, FatherService, FamilyService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

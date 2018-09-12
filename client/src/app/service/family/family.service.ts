@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '../../../../node_modules/@angular/common/http';
-import { Family } from '../../family/family.component';
+import { Family } from '../../component/family/family.component';
 
 @Injectable()
 export class FamilyService {

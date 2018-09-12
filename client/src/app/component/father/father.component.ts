@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {FatherService} from '../service/father/father.service';
+import {FatherService} from '../../service/father/father.service';
 import {HttpErrorResponse} from '@angular/common/http';
 import 'rxjs/add/operator/retry';
 import { MatMenuTrigger } from '@angular/material';
@@ -10,8 +10,6 @@ import { MatMenuTrigger } from '@angular/material';
   styleUrls: ['./father.component.css']
 })
 export class FatherComponent implements OnInit {
-
-  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   firstName: string;
   secondName: string;

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FatherComponent } from './father/father.component';
-import { ChildListComponent } from './child-list/child-list.component';
-import { FamilyComponent } from './family/family.component';
+import { FatherComponent } from './component/father/father.component';
+import { ChildListComponent } from './component/child-list/child-list.component';
+import { FamilyComponent } from './component/family/family.component';
+import { SearchComponent } from './component/search/search.component';
 
 
 const appRoutes: Routes = [
@@ -17,6 +18,10 @@ const appRoutes: Routes = [
   {
     path: 'family',
     component: FamilyComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   }
 ];
 
