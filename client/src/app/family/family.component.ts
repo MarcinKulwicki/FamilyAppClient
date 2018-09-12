@@ -35,6 +35,12 @@ export class FamilyComponent implements OnInit {
     });
 
   }
+  getFather(){
+    return this.fatherService.getFather();
+  }
+  getChildList() {
+    return this.childService.getChildList();
+  }
 
 }
 

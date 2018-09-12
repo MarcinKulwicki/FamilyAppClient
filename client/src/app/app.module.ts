@@ -47,6 +47,7 @@ import { FatherService } from './service/father/father.service';
 import { FamilyService } from './service/family/family.service';
 import { ChildService } from './service/child/child.service';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   exports: [
@@ -99,7 +100,8 @@ export class MatModule {}
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatModule
+    MatModule,
+    AppRoutingModule
   ],
   providers: [ChildService, FatherService, FamilyService],
   bootstrap: [AppComponent]

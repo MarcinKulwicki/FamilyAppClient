@@ -1,6 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <mat-card>
-  <app-father></app-father>
-  <app-child-list></app-child-list>
-  <app-family></app-family>
+  <nav>
+    <button mat-button routerLink="/father">Father</button>
+    <button mat-button routerLink="/child">Child</button>
+    <button mat-button routerLink="/family">Family</button>
+  </nav>
+
+  <router-outlet></router-outlet>
 </mat-card>
+
+
+
+

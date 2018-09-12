@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ChildService} from '../service/child/child.service';
-import {HttpErrorResponse} from '../../../node_modules/@angular/common/http'
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChildService } from '../service/child/child.service';
+import { HttpErrorResponse } from '../../../node_modules/@angular/common/http';
+import { MatMenuTrigger } from '@angular/material';
 
 @Component({
   selector: 'app-child-list',
@@ -8,6 +9,8 @@ import {HttpErrorResponse} from '../../../node_modules/@angular/common/http'
   styleUrls: ['./child-list.component.css']
 })
 export class ChildListComponent implements OnInit {
+
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   firstName: string;
   secondName: string;
