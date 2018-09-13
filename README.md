@@ -1,10 +1,10 @@
 # FamilyAppClient
 
-Jest to klient do aplikacji opartej na SpringBoot oraz Hibernate,
+Jest to klient do aplikacji (serwera) opartej na SpringBoot oraz Hibernate,
 stworzony przez Angular CLI, korzysta z Bootstrapa oraz Angular Material
 
 Cel: 
-Dodawanie Ojca oraz Dzieci aby moc stworzyc w bazie danych rodzine
+Dodawanie Ojca oraz Dzieci aby moc stworzyc w bazie danych rodzine, dodatkowo mozliwosc wyszukiwania dziecka po parametrach i wyswietlenie rodziny danego dziecka z bazy.
 
 Link do serweru restowego:
 https://github.com/MarcinKulwicki/FamilyApp
