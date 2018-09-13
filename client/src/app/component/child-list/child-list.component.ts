@@ -1,7 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChildService } from '../../service/child/child.service';
-import { HttpErrorResponse } from '../../../../node_modules/@angular/common/http';
-import { MatMenuTrigger } from '@angular/material';
 
 @Component({
   selector: 'app-child-list',
@@ -14,15 +12,15 @@ export class ChildListComponent implements OnInit {
   secondName: string;
   pesel: string;
   sex: string;
-  childs: Array<any>;
+  // childs: Array<any>;
 
   constructor(private childService: ChildService) {
   }
 
   ngOnInit() {
-    this.childService.getAll().subscribe(data => {
-      this.childs = data;
-    });
+    // this.childService.getAll().subscribe(data => {
+    //   this.childs = data;
+    // });
   }
 
   addChild() {
@@ -32,15 +30,7 @@ export class ChildListComponent implements OnInit {
       pesel: this.pesel,
       sex: this.sex
     });
-    this.childService.addChild(child).retry(2).subscribe(f => {
-      console.log(f);
-      if (f == null) {
-        this.childService.addToChildList(child);
-        console.log('no error');
-      }
-    }, (error: HttpErrorResponse) => {
-      console.log(error.message);
-    });
+    this.childService.addToChildList(child);
   }
 
   removeChild(child: Child) {

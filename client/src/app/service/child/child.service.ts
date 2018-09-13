@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 import { Child } from '../../component/child-list/child-list.component';
 
 
@@ -9,17 +7,11 @@ export class ChildService {
 
   childList: Array<Child> = [];
 
-  constructor(private http: HttpClient) {
+  constructor() {
   }
-
-  getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/rest');
-  }
-
-  addChild(child: Child): Observable<Child> {
-    return this.http.post<Child>('http://localhost:8080/rest/child', child);
-  }
-
+  // getAll(): Observable<any> {
+  //   return this.http.get('//localhost:8080/rest');
+  // }
   getChildList() {
     return this.childList;
   }

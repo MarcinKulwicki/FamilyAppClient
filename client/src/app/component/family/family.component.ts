@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Child } from '../child-list/child-list.component';
-import { Father } from '../father/father.component';
 import { FamilyService } from '../../service/family/family.service';
 import { FatherService } from '../../service/father/father.service';
 import { ChildService } from '../../service/child/child.service';
@@ -13,6 +11,8 @@ import { HttpErrorResponse } from '../../../../node_modules/@angular/common/http
 })
 export class FamilyComponent implements OnInit {
 
+  error: string;
+
   constructor(private familyService: FamilyService, private fatherService: FatherService, private childService: ChildService) {
   }
 
@@ -20,20 +20,15 @@ export class FamilyComponent implements OnInit {
   }
 
   addFamily() {
-    const family: Family = ({
+    const family: FamilyDTO = ({
       fatherDTO: this.fatherService.getFather(),
       childrenDTO: this.childService.getChildList()
     });
-
-    console.log(this.fatherService.getFather().firstName);
-    console.log(this.childService.getChildList());
-
-    this.familyService.addFamily(family).retry(2).subscribe(f => {
-      console.log(f);
+    this.familyService.addFamily(family).subscribe(f => {
     }, (error: HttpErrorResponse) => {
-      console.log(error);
+      console.log(error.error.message);
+      this.error = error.error.message;
     });
-
   }
 
   getFather() {
@@ -51,11 +46,6 @@ export class FamilyComponent implements OnInit {
     this.familyService.removeSearch();
   }
 
-}
-
-export interface Family {
-  fatherDTO?: Father;
-  childrenDTO?: Array<Child>;
 }
 
 export interface FamilyDTO {

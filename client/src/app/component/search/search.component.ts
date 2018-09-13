@@ -16,7 +16,6 @@ export class SearchComponent implements OnInit {
   date?: Date;
   sex?: string;
   childs: Array<ChildDTO> = [];
-  familyDTO?: FamilyDTO;
 
   constructor(private searchService: SearchService, private familyService: FamilyService) {
   }

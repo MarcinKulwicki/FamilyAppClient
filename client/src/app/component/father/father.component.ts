@@ -1,8 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import {FatherService} from '../../service/father/father.service';
-import {HttpErrorResponse} from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FatherService } from '../../service/father/father.service';
 import 'rxjs/add/operator/retry';
-import { MatMenuTrigger } from '@angular/material';
 
 @Component({
   selector: 'app-father',
@@ -30,12 +28,7 @@ export class FatherComponent implements OnInit {
       pesel: this.pesel,
       date: this.date
     });
-    this.fatherService.addFather(father).retry(2).subscribe(f => {
-        console.log(f);
-      }, (error: HttpErrorResponse) => {
-        console.log(error.message);
-      }
-    );
+    this.fatherService.addFather(father);
 
   }
 
