@@ -21,6 +21,7 @@ export class ChildListComponent implements OnInit {
     // this.childService.getAll().subscribe(data => {
     //   this.childs = data;
     // });
+    this.secondName = this.childService.getSecondName();
   }
 
   addChild() {
@@ -31,6 +32,9 @@ export class ChildListComponent implements OnInit {
       sex: this.sex
     });
     this.childService.addToChildList(child);
+    this.firstName = null;
+    this.pesel = null;
+    this.sex = null;
   }
 
   removeChild(child: Child) {

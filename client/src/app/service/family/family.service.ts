@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '../../../../node_modules/@angular/common/http';
 import { FamilyDTO } from '../../component/search/search.component';
+import { Observable } from '../../../../node_modules/rxjs/Observable';
 
 @Injectable()
 export class FamilyService {
@@ -10,8 +11,8 @@ export class FamilyService {
   constructor(private http: HttpClient) {
   }
 
-  addFamily(family: FamilyDTO) {
-    return this.http.post<FamilyDTO>('http://localhost:8080/rest/familyAdd', family);
+  addFamily(family: FamilyDTO): Observable<any> {
+    return this.http.post<any>('http://localhost:8080/rest/familyAdd', family);
   }
 
   findFamilyById(id: number) {

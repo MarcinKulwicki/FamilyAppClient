@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '../../../../node_modules/@angular/common/http
 })
 export class FamilyComponent implements OnInit {
 
-  error: string;
+  error?: string;
 
   constructor(private familyService: FamilyService, private fatherService: FatherService, private childService: ChildService) {
   }
@@ -20,16 +20,18 @@ export class FamilyComponent implements OnInit {
   }
 
   addFamily() {
+    this.error = null;
     const family: FamilyDTO = ({
       fatherDTO: this.fatherService.getFather(),
       childrenDTO: this.childService.getChildList()
     });
-    this.familyService.addFamily(family).subscribe(f => {
+    this.familyService.addFamily(family).subscribe(s => {
     }, (error: HttpErrorResponse) => {
-      console.log(error.error.message);
-      this.error = error.error.message;
+      this.error = error.error.text;
+      console.log(error.error.text);
     });
   }
+
 
   getFather() {
     return this.fatherService.getFather();
@@ -38,12 +40,14 @@ export class FamilyComponent implements OnInit {
   getChildList() {
     return this.childService.getChildList();
   }
-
   getFamilyDTO() {
     return this.familyService.getFamily();
   }
   removeSearch() {
     this.familyService.removeSearch();
+  }
+  getMessage() {
+    return this.error;
   }
 
 }

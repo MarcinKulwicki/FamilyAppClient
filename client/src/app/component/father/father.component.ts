@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FatherService } from '../../service/father/father.service';
 import 'rxjs/add/operator/retry';
+import { ChildService } from '../../service/child/child.service';
 
 @Component({
   selector: 'app-father',
@@ -14,7 +15,7 @@ export class FatherComponent implements OnInit {
   pesel: string;
   date: Date;
 
-  constructor(private fatherService: FatherService) {
+  constructor(private fatherService: FatherService, private childService: ChildService) {
   }
 
   ngOnInit() {
@@ -28,6 +29,7 @@ export class FatherComponent implements OnInit {
       pesel: this.pesel,
       date: this.date
     });
+    this.childService.throwSecondName(father.secondName);
     this.fatherService.addFather(father);
 
   }
