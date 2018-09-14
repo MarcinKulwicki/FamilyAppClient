@@ -16,4 +16,7 @@ export class FatherService {
   getFather() {
     return this.father;
   }
+  erase() {
+    this.father = null;
+  }
 }

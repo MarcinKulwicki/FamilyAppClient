@@ -37,6 +37,10 @@ export class FatherComponent implements OnInit {
   getFather() {
     return this.fatherService.getFather();
   }
+  erase() {
+    this.fatherService.erase();
+    this.childService.erase();
+  }
 
 }
 

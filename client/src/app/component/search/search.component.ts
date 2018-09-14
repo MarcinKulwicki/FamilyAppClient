@@ -31,7 +31,7 @@ export class SearchComponent implements OnInit {
       date: this.date,
       sex: this.sex
     });
-    this.searchService.searchChild(child).retry(2).subscribe(f => {
+    this.searchService.searchChild(child).subscribe(f => {
       this.childs = f;
       if (f == null) {
         console.log('no error');

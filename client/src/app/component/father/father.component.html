@@ -17,7 +17,9 @@
         <input matInput type="date" [(ngModel)]="date" placeholder="Date">
       </mat-form-field>
 
-      <button type="button" class="btn btn-secondary" (click)="addFather()" routerLink="/child">Add Father</button>
+      <!--<button type="button" class="btn btn-secondary" (click)="addFather()" routerLink="/child">Add Father</button>-->
+      <button mat-fab color="primary" type="button" (click)="addFather()" routerLink="/child">+</button>
+      <button type="button" class="btn btn-secondary" (click)="erase()">Erase</button>
     </div>
       <mat-card>
         <div>Father: {{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}} {{getFather()?.date | date}}</div>

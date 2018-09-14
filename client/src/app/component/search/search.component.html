@@ -28,7 +28,7 @@
 <div *ngIf="getChilds().length > 0;then areChilds;else noChild"></div>
 
 <ng-template #noChild>
-  <mat-card>No result</mat-card>
+  <mat-card><div>No result</div></mat-card>
 </ng-template>
 
 <ng-template #areChilds>

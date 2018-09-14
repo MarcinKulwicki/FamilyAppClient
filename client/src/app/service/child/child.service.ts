@@ -31,4 +31,7 @@ export class ChildService {
   getSecondName(){
     return this.secondName;
   }
+  erase() {
+    this.childList = [];
+  }
 }
