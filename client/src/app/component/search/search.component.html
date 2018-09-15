@@ -28,11 +28,11 @@
 <div *ngIf="getChilds().length > 0;then areChilds;else noChild"></div>
 
 <ng-template #noChild>
-  <mat-card><div>No result</div></mat-card>
+  <mat-card style="background-color: #146351"><div>No result</div></mat-card>
 </ng-template>
 
 <ng-template #areChilds>
-  <mat-card>
+  <mat-card style="background-color: #146351">
     <table class="table table-borderless">
       <thead>
       <tr>

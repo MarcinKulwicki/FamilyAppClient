@@ -62,6 +62,7 @@ export class FamilyComponent implements OnInit {
     this.snackBar.openFromComponent(SnackMessageComponent, {
         duration: 2500,
         data: text,
+        panelClass: ['snack']
       }
     );
   }
@@ -94,8 +95,9 @@ export interface FatherDTO {
   selector: 'app-snack-bar-component-message',
   templateUrl: './snack-bar.component.html',
   styles: [`
-    mat-card {
+    {
       color: cornsilk;
+      background-color: #ff5050;
     }
   `],
 })

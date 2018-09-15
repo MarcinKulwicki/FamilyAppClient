@@ -13,28 +13,28 @@
       <div *ngIf="getChildList().length > 0;then areChilds;else noChild"></div>
 
       <ng-template #noChild>
-        <mat-card><div>Child list is empty</div></mat-card>
+        <mat-card style="background-color: #146351"><div>Child list is empty</div></mat-card>
       </ng-template>
 
       <ng-template #areChilds>
-        <mat-card>
+        <mat-card style="background-color: #146351">
           <table class="table table-borderless">
             <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="row">First Name</th>
-              <th scope="row">Second Name</th>
-              <th scope="row">Pesel</th>
-              <th scope="row">Sex</th>
+              <th class="myFamily" scope="col">#</th>
+              <th class="myFamily" scope="row">First Name</th>
+              <th class="myFamily" scope="row">Second Name</th>
+              <th class="myFamily" scope="row">Pesel</th>
+              <th class="myFamily" scope="row">Sex</th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let child of getChildList(); let i= index">
-              <th scope="row">{{i+1}}</th>
-              <td>{{child?.firstName}}</td>
-              <td>{{child?.secondName}}</td>
-              <td>{{child?.pesel}}</td>
-              <td>{{child?.sex}}</td>
+              <th class="myFamily" scope="row">{{i+1}}</th>
+              <td class="myFamily">{{child?.firstName}}</td>
+              <td class="myFamily">{{child?.secondName}}</td>
+              <td class="myFamily">{{child?.pesel}}</td>
+              <td class="myFamily">{{child?.sex}}</td>
             </tr>
             </tbody>
           </table>
@@ -57,11 +57,11 @@
       <div *ngIf="getFamilyDTO().childrenDTO.length > 0;then areChilds;else noChild"></div>
 
       <ng-template #noChild>
-        <mat-card>Child list is empty</mat-card>
+        <mat-card style="background-color: #146351">Child list is empty</mat-card>
       </ng-template>
 
       <ng-template #areChilds>
-        <mat-card>
+        <mat-card style="background-color: #146351">
           <table class="table table-borderless">
             <thead>
             <tr>
