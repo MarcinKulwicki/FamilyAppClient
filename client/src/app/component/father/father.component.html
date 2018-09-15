@@ -1,29 +1,71 @@
-<div>
-  <mat-card>
-    <div class="example-container">
+<mat-card>
+  <div class="example-container" hidden>
+    <mat-form-field>
+      <input matInput [(ngModel)]="firstName">
+    </mat-form-field>
+  </div>
+  <p *ngIf="!getFather(); then noFather; else areFather"></p>
+  <ng-template #areFather>{{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}}
+    {{getFather()?.date | date}}
+  </ng-template>
+  <ng-template #noFather>No father added</ng-template>
+</mat-card>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out Father name and surname</ng-template>
       <mat-form-field>
-        <input matInput [(ngModel)]="firstName" placeholder="First Name">
+        <input matInput [(ngModel)]="firstName" placeholder="First name" formControlName="firstCtrl" required>
       </mat-form-field>
-
       <mat-form-field>
-        <input matInput [(ngModel)]="secondName" placeholder="Second Name">
+        <input matInput [(ngModel)]="secondName" placeholder="Second name" formControlName="firstCtrl" required>
       </mat-form-field>
-
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out Father Pesel</ng-template>
       <mat-form-field>
-        <input matInput [(ngModel)]="pesel" placeholder="PESEL">
+        <input matInput [(ngModel)]="pesel" placeholder="Pesel" formControlName="secondCtrl" required>
       </mat-form-field>
-
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Fill out Father Date</ng-template>
       <mat-form-field>
-        <input matInput type="date" [(ngModel)]="date" placeholder="Date">
+        <input matInput [matDatepicker]="picker" placeholder="Date"
+               (dateInput)="addDate($event)" formControlName="thirdCtrl" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <!--You are now done.-->
+    <div>
+      <button mat-button matStepperPrevious mat-fab color="blue" type="button">Back</button>
       <button mat-fab color="primary" type="button" (click)="addFather()" routerLink="/child">Save</button>
-      <button mat-fab color="blue" type="button" (click)="erase()" routerLink="/child">Erase</button>
     </div>
-      <mat-card>
-        <div>Father: {{getFather()?.firstName}} {{getFather()?.secondName}} {{getFather()?.pesel}} {{getFather()?.date | date}}</div>
-      </mat-card>
-  </mat-card>
-</div>
+  </mat-step>
+  <div>
+
+  </div>
+</mat-vertical-stepper>
+
 
 <router-outlet></router-outlet>
+
+<button mat-fab color="blue" type="button" (click)="erase()" routerLink="/father">Erase</button>

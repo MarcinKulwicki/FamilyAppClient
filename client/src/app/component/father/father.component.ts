@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FatherService } from '../../service/father/father.service';
 import 'rxjs/add/operator/retry';
 import { ChildService } from '../../service/child/child.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDatepickerInputEvent } from '@angular/material';
 
 @Component({
   selector: 'app-father',
@@ -15,10 +17,28 @@ export class FatherComponent implements OnInit {
   pesel: string;
   date: Date;
 
-  constructor(private fatherService: FatherService, private childService: ChildService) {
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+
+  constructor(private fatherService: FatherService, private childService: ChildService, private _formBuilder: FormBuilder) {
   }
 
   ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+    this.thirdFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+  }
+
+  addDate(event: MatDatepickerInputEvent<Date>) {
+    this.date = event.value;
   }
 
   addFather() {
