@@ -41,7 +41,7 @@
         </mat-card>
       </ng-template>
       <!--<button type="button" class="btn btn-secondary" (click)="addFamily()">Add Family</button>-->
-      <button mat-fab color="primary" type="button" (click)="addFamily()">+</button>
+      <p class="addButton"><button mat-fab color="primary" type="button" (click)="addFamily()">+</button></p>
     </mat-card>
 
   </ng-template>
@@ -91,11 +91,6 @@
   </ng-template>
 </div>
 
-<p *ngIf="getMessage()"><mat-error *ngIf="getMessage()?.search('added') > 0; then success; else error"></mat-error></p>
-
-  <ng-template #success><p class="success">{{getMessage()}}</p></ng-template>
-
-  <ng-template #error><p class="error">{{getMessage()}}</p></ng-template>
 
 
 

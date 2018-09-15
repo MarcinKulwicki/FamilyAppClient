@@ -1,0 +1,6 @@
+
+<mat-card *ngIf="getData().search('added') > 0; then success; else error"></mat-card>
+
+<ng-template #success><mat-card style="color: green">{{data}}</mat-card></ng-template>
+
+<ng-template #error><mat-card style="color: #ff5050">{{data}}</mat-card></ng-template>

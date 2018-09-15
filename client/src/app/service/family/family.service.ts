@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '../../../../node_modules/@angular/common/http';
 import { FamilyDTO } from '../../component/search/search.component';
 import { Observable } from '../../../../node_modules/rxjs/Observable';
@@ -54,3 +54,5 @@ export interface FatherDTO {
   pesel?: string;
   date?: Date;
 }
+
+

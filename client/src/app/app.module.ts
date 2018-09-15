@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppRoutingModule } from './app.routing.module'
+import { AppRoutingModule } from './app.routing.module';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -43,7 +43,7 @@ import {
 import { AppComponent } from './app.component';
 import { ChildListComponent } from './component/child-list/child-list.component';
 import { FatherComponent } from './component/father/father.component';
-import { FamilyComponent } from './component/family/family.component';
+import { FamilyComponent, SnackMessageComponent } from './component/family/family.component';
 import { SearchComponent } from './component/search/search.component';
 
 import { FatherService } from './service/father/father.service';
@@ -89,19 +89,25 @@ import { SearchService } from './service/search/search.service';
     MatToolbarModule,
     MatTooltipModule
   ]
-  // ,
-  // providers: [SearchService],
-  // declarations: [SearchComponent]
 })
 export class MatModule {}
 
 @NgModule({
+  entryComponents: [
+    AppComponent,
+    ChildListComponent,
+    FatherComponent,
+    FamilyComponent,
+    SearchComponent,
+    SnackMessageComponent
+  ],
   declarations: [
     AppComponent,
     ChildListComponent,
     FatherComponent,
     FamilyComponent,
-    SearchComponent
+    SearchComponent,
+    SnackMessageComponent
   ],
   imports: [
     BrowserModule,

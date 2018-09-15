@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FamilyService } from '../../service/family/family.service';
 import { FatherService } from '../../service/father/father.service';
 import { ChildService } from '../../service/child/child.service';
 import { HttpErrorResponse } from '../../../../node_modules/@angular/common/http';
+import { MAT_SNACK_BAR_DATA, MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-family',
@@ -13,7 +14,10 @@ export class FamilyComponent implements OnInit {
 
   error?: string;
 
-  constructor(private familyService: FamilyService, private fatherService: FatherService, private childService: ChildService) {
+  constructor(private familyService: FamilyService,
+              private fatherService: FatherService,
+              private childService: ChildService,
+              public snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
@@ -29,6 +33,7 @@ export class FamilyComponent implements OnInit {
     }, (error: HttpErrorResponse) => {
       this.error = error.error.text;
       console.log(error.error.text);
+      this.openSnackBar(error.error.text);
     });
   }
 
@@ -40,16 +45,26 @@ export class FamilyComponent implements OnInit {
   getChildList() {
     return this.childService.getChildList();
   }
+
   getFamilyDTO() {
     return this.familyService.getFamily();
   }
+
   removeSearch() {
     this.familyService.removeSearch();
   }
+
   getMessage() {
     return this.error;
   }
 
+  openSnackBar(text: string) {
+    this.snackBar.openFromComponent(SnackMessageComponent, {
+        duration: 2500,
+        data: text,
+      }
+    );
+  }
 }
 
 export interface FamilyDTO {
@@ -72,4 +87,23 @@ export interface FatherDTO {
   secondName?: string;
   pesel?: string;
   date?: Date;
+}
+
+
+@Component({
+  selector: 'app-snack-bar-component-message',
+  templateUrl: './snack-bar.component.html',
+  styles: [`
+    mat-card {
+      color: cornsilk;
+    }
+  `],
+})
+export class SnackMessageComponent {
+
+  constructor(@Inject(MAT_SNACK_BAR_DATA) public data: string) {
+  }
+  getData() {
+    return this.data;
+  }
 }
