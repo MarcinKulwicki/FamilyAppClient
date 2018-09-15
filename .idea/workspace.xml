@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8984ebb-d9b5-41e3-8a81-65634b07984c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/app/component/family/snack-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/component/child-list/child-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/component/child-list/child-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/component/family/family.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/component/family/family.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/component/family/family.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/component/family/family.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/component/family/family.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/component/family/family.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/component/father/father.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/component/father/father.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/service/family/family.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/service/family/family.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +37,7 @@
           <entry key="gitignore" value="1" />
           <entry key="html" value="42" />
           <entry key="json" value="10" />
-          <entry key="md" value="2" />
+          <entry key="md" value="4" />
           <entry key="ts" value="121" />
         </counts>
       </usages-collector>
@@ -54,7 +46,7 @@
           <entry key="CSS" value="17" />
           <entry key="HTML" value="42" />
           <entry key="JSON" value="6" />
-          <entry key="Markdown" value="2" />
+          <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="TypeScript" value="121" />
           <entry key="tsconfig" value="4" />
@@ -96,6 +88,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -130,7 +142,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/app/component/family/snack-bar.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -315,7 +327,7 @@
     <property name="SearchEverywhereHistoryKey" value="ter&#9;ACTION&#9;ActivateTerminalToolWindow" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537005586108" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537006392889" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -374,12 +386,12 @@
       <workItem from="1536789252795" duration="2091000" />
       <workItem from="1536840029047" duration="12323000" />
       <workItem from="1536935751442" duration="4945000" />
-      <workItem from="1536999578585" duration="6382000" />
+      <workItem from="1536999578585" duration="6778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83120000" />
+    <option name="totallyTimeSpent" value="83516000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -393,9 +405,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="39" width="2497" height="1561" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8617234" visible="true" weight="0.27130505" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8617234" visible="true" weight="0.27130505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -412,7 +423,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2961918" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2961918" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -566,22 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -725,16 +720,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/app/component/family/family.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/app/component/family/family.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -763,6 +748,32 @@
             <element signature="n#style#0;n#mat-card#0;n#ng-template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#mat-card#0;n#ng-template#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/app/component/family/family.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
