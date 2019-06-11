@@ -3,11 +3,14 @@
 Video:
 https://drive.google.com/open?id=1emSIXHk8cr92SspJtoH9XIRPZ_C4SFp8
 
-Jest to klient do aplikacji (serwera) opartej na SpringBoot oraz Hibernate,
-stworzony przez Angular CLI, korzysta z Bootstrapa oraz Angular Material
+Jest to aplikacja front end'owa, stworzona przy użyciu Angulara CLI, korzysta z Bootstrapa oraz Angular Material
 
 Cel: 
-Dodawanie Ojca oraz Dzieci aby moc stworzyc w bazie danych rodzine, dodatkowo mozliwosc wyszukiwania dziecka po parametrach i wyswietlenie rodziny danego dziecka z bazy.
+Aplikacja powstała na potrzeby edukacyjne. Zawiera podstawową funkcjonalność typowego formularza z opcja wyszukiwania po parametrach.
+
+Podstawowe funcje:
+- Tworzony jest formularz na froncie (wstępnie sprawdzana poprawność danych) oraz wysyłany POSTem na server restowy.
+- Wyszukiwanie realizowane jest na froncie
 
 Link do serweru restowego:
 https://github.com/MarcinKulwicki/FamilyApp
